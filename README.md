@@ -1,2 +1,2 @@
-# slides
-Raccolta delle slide usate durante le lezioni di coderfarm.
+# Materiali
+Raccolta delle slides e altri materiali usati durante le lezioni di coderfarm.
