@@ -1,2 +1,3 @@
 # Materiali
-Raccolta delle slides e altri materiali usati durante le lezioni di coderfarm.
+
+Raccolta delle slide e degli altri materiali usati durante le lezioni di coderfarm.
