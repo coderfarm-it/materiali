@@ -1,5 +1,7 @@
 # Coderfarm corso avanzato
 
+Il corso avanzato è rivolto a chi ha già esperienza di programmazione ma nessuna o poca familiarità con la programmazione competitiva.
+
 ## Argomenti per lezione
 
 0. Intro alla programmazione competitiva, complessità computazionale, ricerca binaria
@@ -16,4 +18,4 @@
 11. Segment Tree: lazy propagation
 12. Alberi: linearizzazione e Small to Large
 13. Binary lifting, cycle detection (cicli e cicli negativi), cammini euleriani
-14. Matematica: Esponenziazione veloce, inversi modulari, combinatoria; Stringhe: Rolling Hash e applicazioni
+14. Matematica: esponenziazione veloce, inversi modulari, combinatoria; Stringhe: Rolling Hash e applicazioni
