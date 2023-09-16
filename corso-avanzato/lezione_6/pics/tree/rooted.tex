@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+  \tikzset{vertex/.style = {draw, circle, thick}}
+  \tikzset{arc/.style = {ultra thick}}
+  % Actual tree
+  \node[vertex] {4}
+    child[arc] {node[vertex] {1}}
+    child[arc] {node[vertex] {2}}
+    child[arc] {node[vertex] {3}}
+    child[arc] {node[vertex] {5}
+      child[arc] {node[vertex] {6}}};
+\end{tikzpicture}

@@ -1,0 +1,108 @@
+\documentclass[compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{ccicons}
+
+\usepackage{tikz}
+\usetikzlibrary{graphs, quotes, arrows.meta, matrix}
+
+\usetheme{default}
+\usecolortheme{Nord}
+\setbeamertemplate{navigation symbols}{}
+
+\title{Esercizi sui grafi}
+\subtitle{Dijkstra, DSU e DP su grafi}
+\author{Lorenzo Ferrari, Davide Bartoli}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}{Table of contents}
+  \tableofcontents
+\end{frame}
+
+\section{Problemi}
+
+\subsection{investigation}
+\begin{frame}{Problemi}{investigation}
+    \underline{\url{https://cses.fi/problemset/task/1202}}
+    \begin{itemize}
+        \item ci vengono chieste diverse informazioni riguardo gli shortest path
+        \pause
+    \item dobbiamo fare contemporaneamente dijkstra e dp su un grafo
+    \end{itemize}
+\end{frame}
+
+\subsection{ois\_xmastree}
+\begin{frame}{Problemi}{ois\_xmastree}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_xmastree/statement}}
+    \begin{itemize}
+        \item sembra tanto una dp su albero
+        \pause
+        \item radichiamo l'albero in $0$
+        \pause
+        \item se switcho un nodo diverso dalla root, anche il suo parent viene switchato
+        \item per ogni nodo  $v$ non foglia, il numero di volte che $v$ viene switchato \`e la somma del numero di volte in cui i figli vengono switchati
+        \pause
+        \item siano \texttt{dp[v][0]} e \texttt{dp[v][1]} la risposta per il subtree del nodo $v$, dove $v$ \`e switchato rispettivamente un numero pari e un numero dispari di volte
+    \end{itemize}
+\end{frame}
+
+\subsection{ois\_patrol}
+\begin{frame}{Problemi}{ois\_patrol}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_patrol/statement}}
+\end{frame}
+
+
+\subsection{ois\_cannons}
+\begin{frame}{Problemi}{ois\_cannons}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_cannons/statement}}
+    \begin{itemize}
+        \item prima idea importante: vediamo il problema come un grafo pesato, gli archi in input hanno costo 0, 
+        gli archi che vanno dal nodo $i$ al nodo $j$ hanno costo $j-i$
+        \pause
+        \item possiamo quindi fare dijkstra per trovare la risposta al problema. Il numero di archi però è $O(N^2)$, 
+        quindi questa soluzione non ottiene punteggio pieno.
+    \end{itemize}
+    \pause
+    Possiamo ridurre il numero di archi senza perdere informazioni?
+    \pause
+    Rappresentando gli archi aggiunti da noi, notiamo che alcuni non sono necessari!
+\end{frame}
+
+\subsection{crocodile}
+\begin{frame}{Problemi}{crocodile}
+    \underline{\url{https://training.olinfo.it/\#/task/crocodile/statement}}
+    \pause
+    \begin{itemize}
+        \item il problema non \`e banale
+        \item facciamo dijkstra al contrario, partendo dalle uscite
+        \pause
+        \item per ogni nodo, teniamo le due distanze minime
+        \item ``propaghiamo'' con la seconda distanza minima: l'avversario bloccher\`a il cammino migliore
+    \end{itemize}
+
+    \pause
+    Un problema molto simile \`e \texttt{pre\_boi\_sbarramento}
+
+    \small{\underline{\url{https://training.olinfo.it/\#/task/pre_boi_sbarramento/statement}}}
+\end{frame}
+
+\begin{frame}{Problemi}
+    \underline{\url{https://cses.fi/problemset/task/1202}}
+    \underline{\url{https://cses.fi/problemset/task/1679}}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_patrol/statement}}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_xmastree/statement}}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_words/statement}}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_cannons/statement}}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_minperm/statement}}
+    \underline{\url{https://training.olinfo.it/\#/task/ois_waterslide/statement}}
+    \underline{\url{https://training.olinfo.it/\#/task/crocodile/statement}}
+\end{frame}
+
+\end{document}

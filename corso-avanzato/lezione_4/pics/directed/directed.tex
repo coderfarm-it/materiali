@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+  \tikzset{vertex/.style = {draw, circle, thick}}
+  \tikzset{arc/.style = {-latex, ultra thick}}
+  % Nodes
+  \node[vertex] (1) at (0, 1) {a};
+  \node[vertex] (2) at (2, 2) {b};
+  \node[vertex] (3) at (4, 2) {c};
+  \node[vertex] (4) at (2, 0) {d};
+  \node[vertex] (5) at (4, 0) {e};
+  \node[vertex] (6) at (5, 1) {f};
+  % Edges
+  \draw[arc] (1) edge (2);
+  \draw[arc] (2) edge (3);
+  \draw[arc] (4) edge (3);
+  \draw[arc] (4) edge (5);
+  \draw[arc] (5) edge (3);
+  \draw[arc, bend left = 10] (1) edge (4);
+  \draw[arc, bend left = 10] (4) edge (1);
+\end{tikzpicture}
